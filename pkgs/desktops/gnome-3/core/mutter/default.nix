@@ -27,7 +27,7 @@ stdenv.mkDerivation rec {
   configureFlags = [
     "--with-x"
     "--disable-static"
-    # "--enable-remote-desktop"
+    "--enable-remote-desktop"
     "--enable-shape"
     "--enable-sm"
     "--enable-startup-notification"
