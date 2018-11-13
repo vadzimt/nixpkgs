@@ -28,6 +28,12 @@ in buildPythonPackage rec {
       url = https://bugzilla.gnome.org/attachment.cgi?id=371989;
       sha256 = "1k46nvw175c1wvkqnx783i9d4w9vn431spcl48jb3y224jj3va08";
     })
+    # Fixes `from gi.repository import Gst` when gst-python's site-package is in
+    # PYTHONPATH
+    (fetchurl {
+      url = https://gitlab.freedesktop.org/gstreamer/gst-python/commit/d64bbc1e0c3c948c148f505cc5f856ce56732880.diff;
+      sha256 = "1n9pxmcl1x491mp47avpcw2a6n71lm0haz6mfas168prkgsk8q3r";
+    })
   ];
 
   # TODO: First python_dep in meson.build needs to be removed
